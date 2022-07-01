@@ -1,0 +1,36 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Company {
+    description: String!
+    id: ID!
+    jobs: [Job]
+    name: String!
+}
+
+type Job {
+    company: Company
+    description: String!
+    id: ID!
+    title: String!
+}
+
+type Mutation {
+    createJob(input: CreateJobInput): Job
+}
+
+type Query {
+    company(id: ID!): Company
+    greeting(name: String!): String
+    job(id: ID!): Job
+    jobs(limit: Int!): [Job]
+}
+
+input CreateJobInput {
+    description: String!
+    title: String!
+}

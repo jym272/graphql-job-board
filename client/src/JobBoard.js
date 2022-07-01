@@ -14,7 +14,7 @@ export class JobBoard extends Component {
     }
 
     async componentDidMount() {
-        const jobs = await loadJobs(10);
+        const jobs = await loadJobs(15);
         this.setState({jobs});
     }
 

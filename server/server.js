@@ -25,6 +25,9 @@ const startServer = async () => {
         {
             typeDefs, resolvers,
             context: ({req}) => {
+                // if there's a token, jwt lib will decode it and return the user to the context
+                // automatically.
+
                 // const token = req.headers.authorization || '';
                 // const user = jwt.verify(token, jwtSecret);
                 return {user: req.user};
